@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/aboutTitle"
+        android:text="@string/text_about"
+        style="@style/MyHeadingStyle" />
+
+    <TextView
+        android:id="@+id/aboutDescription"
+        android:text="@string/about_description"
+        android:layout_below="@+id/imgbusinessninja"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:autoLink="web"
+        android:textColorLink="@color/colorPrimaryDark"
+        style="@style/myTextViewsNINJA"/>
+
+    <ImageView
+        android:id="@+id/imgbusinessninja"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/aboutTitle"
+        android:layout_centerHorizontal="true"
+        android:foregroundGravity="fill_horizontal"
+        app:srcCompat="@drawable/businessninja"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/btnBack"
+        android:text="@string/backBTN"
+        android:layout_below="@+id/aboutDescription"
+        android:layout_alignStart="@+id/aboutTitle"
+        android:layout_marginStart="40dp"
+        style="@style/myButtonsNINJA"
+        android:onClick="returnToWelcomeScreen"/>
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:text="@string/join_usBTN"
+        android:layout_marginEnd="50dp"
+        android:layout_below="@+id/aboutDescription"
+        android:layout_alignEnd="@+id/aboutTitle"
+        style="@style/myButtonsNINJA"
+        android:onClick="createAccountWelcome"/>
+
+
+</RelativeLayout>
+</ScrollView>

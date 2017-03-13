@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.karol.financialninja.WelcomeActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/welcomeTitle"
+        android:text="@string/welcomeTitle"
+        style="@style/MyHeadingStyle" />
+
+    <TextView
+        android:id="@+id/welcomeDescription"
+        android:text="@string/welcomeDescription"
+        android:textAlignment="center"
+
+        style="@style/myTextViewsNINJA"
+        android:layout_below="@+id/welcomeTitle"
+        android:layout_marginTop="10dp"
+        android:autoLink="web"
+/>
+
+    <ImageButton
+        android:id="@+id/helpWelcomeBtn"
+        app:srcCompat="@android:drawable/ic_menu_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/welcomeDescription"
+        android:contentDescription=""
+        android:onClick="readAboutTheApp"
+        android:background="@drawable/text_border"
+        android:backgroundTint="@color/specialButton"/>
+
+    <TextView
+        android:id="@+id/welcomeInvitation"
+        android:text="@string/welcomeInvitation"
+        android:textAlignment="center"
+        style="@style/myTextViewsNINJA"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@+id/helpWelcomeBtn"
+        android:layout_marginTop="15dp"
+        android:background="@color/description" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/createAccountBtn"
+        android:text="@string/join_usBTN"
+        android:layout_alignBaseline="@+id/LogInBTN"
+        android:layout_alignBottom="@+id/LogInBTN"
+        android:layout_toStartOf="@+id/helpWelcomeBtn"
+        style="@style/myButtonsNINJA"
+        android:onClick="createAccountWelcome"/>
+
+    <Button
+        android:id="@+id/LogInBTN"
+        android:text="@string/log_in"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/welcomeInvitation"
+        android:layout_toEndOf="@+id/helpWelcomeBtn"
+        style="@style/myButtonsNINJA"
+        android:onClick="logInWelcome" />
+</RelativeLayout>
+</ScrollView>

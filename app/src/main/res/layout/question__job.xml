@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/question__job"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.karol.financialninja.Question_Job">
+
+
+
+    <!--title-->
+    <TextView
+        android:id="@+id/FinancialQuiz"
+        android:text="Financial Quiz"
+        style="@style/MyHeadingStyle"/>
+
+    <TextView
+        android:id="@+id/questionAboutJob"
+        android:text="Question 1"
+        android:textColor="@color/h2Title"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/FinancialQuiz"/>
+
+    <!--Question content-->
+    <TextView
+        android:id="@+id/questionAboutJob_question"
+        style="@style/myTextViewsNINJA"
+        android:text="Do you currently have a job?"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/questionAboutJob"/>
+
+    <RadioButton
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RbtnNo"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/RbtnYes"
+        android:layout_alignStart="@+id/RbtnYes" />
+
+    <RadioButton
+        android:text="Yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RbtnYes"
+        android:layout_below="@+id/questionAboutJob_question"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+
+        android:hint="Enter your monthly income"
+        android:id="@+id/earnings"
+        style="@style/EditTextStyle"
+        android:layout_below="@+id/questionAboutJob_questionMoney"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:text="How much do your earn average every month?"
+        style="@style/myTextViewsNINJA"
+        android:id="@+id/questionAboutJob_questionMoney"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/RbtnNo"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Next"
+        style="@style/myButtonsNINJA"
+        android:id="@+id/btnSubmitQuestionJob"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/earnings"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
+    </ScrollView>

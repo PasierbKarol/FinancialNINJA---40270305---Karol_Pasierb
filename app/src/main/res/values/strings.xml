@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Financial NINJA</string>
+    <string name="welcomeTitle">Welcome to Financial NINJA</string>
+    <string name="createTitle">Become Financial NINJA</string>
+
+	<string name="welcomeDescription">
+		Welcome to <b>Financial NINJA</b>.
+        \nThis app will support you on your path to become true Financial Ninja. A person that is greatly aware about personal finance and takes care of it.
+        \n
+
+        We encourage you to read books and blogs about personal finance and come back to them once in a while.
+		This ap will be your library of great inspirational and motivational quotes that will change your finance and your life.
+	</string>
+
+
+   <string name="about_description">
+		American Financial <b>NINJA</b> means this:
+		\n
+		<b>N</b>o <b>I</b>ncome, <b>N</b>o <b>J</b>ob, <b>N</b>o <b>A</b>ssets
+		Do you intend to follow this path through your life or you would actually prefer to be financially stable and not to constantly worry for tomorrow?
+		\n\n
+		True Financial NINJA is aware about the money flow and works hard to expand assets and have more money, time and enjoy life rather than live in constant financially caused stress. Choose which way you want to go.
+		Then please join us and learn more.
+		\n
+		You can learn most from reading plenty of great books about finance. In each of them you can find great motivaional fragments and quotes.
+		\nThis app will help you to organize them and will serve as a constant reminder of these great financial tips.
+
+		There are a lot of great personal finance blogs that can teach you about your money. It\'s worth to explore them and learn as much as possible.
+		\n
+        \n
+		Here are some interesting pages:
+		\n<b><u>jakoszczedzacpieniadze.pl</u></b>
+		\n<b><u>finansowyninja.pl</u></b>
+		\n<b><u>marciniwuc.com</u></b>
+    </string>
+
+    <string name="levelDescriptionTXT">Either you are on the beginning of your journey or you consider yourself a great Ninja adept there are always some more things to learn and errors to avaid. Often it is easy to forget great tips and sentences.
+		<b>Do not worry!	</b>
+        We understand you and we made this app to help you organize the best ideas you\'ll come across so you will have them handy all the time..
+        \n
+        \n
+        <b>We believe in you.</b>
+	</string>
+
+    <string name="ninja_adept_descriptionTXT">So, you want to become Financial NINJA? We are very happy to hear about it.
+        \nWe believe every person on Earth should follow this path and we are also aware that for most of them this will be a very difficult and challenging path.
+        This is absolutely normal and the reason is that most of people do not have any financial education as nobody really cares to teach you that.
+        \n
+        We want you to be aware what money is and how you should handle it to have brighter future ahead of you and do not worry constantly about tomorrow.
+        It is normal you feel afraid and stressed now. It will pass eventually, but it requires a lot of changes that will come in your way gradually.
+        \nWe believe in you. <b>Believe in yourself too.</b>
+		\n
+		The best thing you can do now is to start invest your time into financial education.
+        As more you read and explore the more you will know about how finance works and less errors you\'ll make.
+		\nWhen you are going to read note down all the best parts and quotes and keep them here.
+        This app will constantly remind you those great sentences to stay on track and expand your financial knowledge.
+	</string>
+
+
+    <string name="quiz_infoTXT">
+		<i>This Quiz contains x questions and it\’s going to determine which Ninja Level you are currently on. \n
+        You cannot stop the quiz and you cannot quit the app during the quiz. Please allow yourself 10 minutes to complete it before you attempt it.
+        \nOnce you will answer any question there is no coming back, therefore please be sure about the answer you want to give.
+        You can take this quiz every 3 months. This time period is quite reasonable to allow any changes in your finance that could determine different NINJA level.
+        \nAre you sure you are ready to take the quiz now?</i>
+	</string>
+
+    <string name="resultsLevelDescription">
+		<b>You upgraded your status.</b>\n
+        You learned something new and you have improved your financial situation.
+        As you have just started your path on this level please remember you cannot rush too much to the next stage as this may cause financial problems.
+        \nTrue NINJA remembers that training is the most important thing and it takes time. Be patient and learn more skills.</string>
+
+
+
+
+	<string name="startQuizBtn">Start Quiz</string>
+    <string name="welcome_new_ninjaTitle">Welcome New Ninja Adept</string>
+    <string name="level_zero_description">You have to complete the quiz to become an adept</string>
+	<string name="backBTN">Back</string>
+    <string name="join_usBTN">Join Us</string>
+    <string name="nameLbl">Name:</string>
+    <string name="full_nameTXT">Enter your full name</string>
+    <string name="usernameLbl">Username:</string>
+    <string name="chooseLoginTxt">Choose your login</string>
+    <string name="emailTxt">Enter your email</string>
+    <string name="passwordLbl">Password:</string>
+    <string name="choose_passHint">Choose your password</string>
+    <string name="confirm_passwordLbl">Confirm Password:</string>
+    <string name="cancelBtn">Cancel</string>
+    <string name="createBTN">Create</string>
+    <string name="loginTitle">Welcome Back Ninja</string>
+    <string name="enter_your_loginTxt">Enter your login</string>
+    <string name="enter_your_passwordTxt">Enter your password</string>
+    <string name="forgot_your_passwordTxt">Forgot your password? Click</string>
+    <string name="recover_passwordLink"><u>Here!</u></string>
+    <string name="homeTitle">Financial Ninja\'s Path</string>
+    <string name="level1pathTitle">You are on the Level 1 of Ninja\'s Path</string>
+    <string name="level2pathTitle">You are on the Level 2 of Ninja\'s Path</string>
+    <string name="level3pathTitle">You are on the Level 3 of Ninja\'s Path</string>
+    <string name="level4pathTitle">You are on the Level 4 of Ninja\'s Path</string>
+	<string name="ninja_awareness_quizTitle">Ninja Awareness Quiz</string>
+    <string name="continueBtn">Continue</string>
+	<string name="quiz_resultsTitle">Awareness Quiz Results</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="resultsLbl">Results</string>
+    <string name="timeLBL">TIME:</string>
+    <string name="pointsLBL">Points:</string>
+	<string name="welcomeInvitation">
+		If you sure you want to become NINJA or you are already one please choose one option below.
+	</string>
+    <string name="log_in">Log In</string>
+    <string name="text_about">What Financial Ninja is about.</string>
+</resources>

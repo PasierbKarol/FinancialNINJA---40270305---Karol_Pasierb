@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/mainBackground">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/homeTitle"
+        style="@style/MyHeadingStyle"
+        android:text="@string/welcome_new_ninjaTitle" />
+
+    <TextView
+        android:id="@+id/lvlPathTitle"
+        android:text="@string/level_zero_description"
+        android:textSize="20sp"
+        android:textColor="@color/h2Title"
+        android:textStyle="italic"
+        android:layout_below="@+id/homeTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="25dp"
+        style="@style/myTextViewsNINJA"
+         />
+
+    <ImageView
+        android:id="@+id/ninjaLevelIMG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/determinedninja"
+        android:layout_below="@+id/lvlPathTitle"
+        android:layout_alignStart="@+id/lvlPathTitle"
+        />
+
+    <TextView
+        android:id="@+id/levelDescription"
+        android:layout_below="@id/ninjaLevelIMG"
+        style="@style/myTextViewsNINJA"
+        android:text="@string/ninja_adept_descriptionTXT"
+        android:textColor="@color/fontColour"/>
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/startQuizBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_below="@id/levelDescription"
+        android:text="@string/startQuizBtn"
+        style="@style/myButtonsNINJA"
+        android:onClick="startQuizFromHome"/>
+
+</RelativeLayout>
+</ScrollView>

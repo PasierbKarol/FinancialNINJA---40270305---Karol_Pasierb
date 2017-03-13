@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/quizInfoTitle"
+        style="@style/MyHeadingStyle"
+        android:text="@string/ninja_awareness_quizTitle" />
+
+    <ImageView
+        android:id="@+id/quizInfoIMG"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/ninjamain"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/quizInfoTitle"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/quizInfoTxt"
+        android:layout_below="@+id/quizInfoIMG"
+        style="@style/myTextViewsNINJA"
+        android:text="@string/quiz_infoTXT" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@id/cancelBtn"
+        android:text="@string/cancelBtn"
+        android:layout_below="@+id/quizInfoTxt"
+        android:layout_alignStart="@+id/quizInfoTitle"
+        style="@style/myButtonsNINJA"
+        android:onClick="cancelQuiz"/>
+
+    <Button
+        android:id="@+id/startQuizBtn"
+        android:text="@string/startQuizBtn"
+        android:layout_below="@+id/quizInfoTxt"
+        android:layout_alignEnd="@+id/quizInfoTitle"
+        style="@style/myButtonsNINJA"
+        android:onClick="startQuizFromInfo"
+         />
+
+
+</RelativeLayout>
+    </ScrollView>

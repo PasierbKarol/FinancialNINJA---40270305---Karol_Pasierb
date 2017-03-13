@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.karol.financialninja">
+
+    <!-- Adding permision to allow our app using the Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/determinedninja"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme">
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".HomeScreenActivity" />
+        <activity android:name=".HomeScreenNEWactivity" />
+        <activity android:name=".QuizInfoActivity" />
+        <activity android:name=".QuizResultsActivity" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".Question_Job"></activity>
+    </application>
+
+</manifest>

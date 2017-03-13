@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="MyTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/mainBackground</item>
+    </style>
+
+    <!-- Style for Headings -->
+    <style name="MyHeadingStyle" parent="android:Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/text_border</item>
+    </style>
+
+    <!-- Style for text-boxes -->
+    <style name="EditTextStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/fontColour</item>
+        <item name="android:background">@color/description</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Style for descriptions -->
+    <style name="textDescriptionStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/fontColour</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@color/description</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- Style for Buttons -->
+    <style name="myButtonsNINJA" parent="Widget.AppCompat.Button">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/specialButton</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">30dp</item>
+    </style>
+
+    <style name="myTextViewsNINJA" parent="android:Widget.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/fontColour</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>
