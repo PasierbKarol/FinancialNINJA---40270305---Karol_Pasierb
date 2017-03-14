@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
     >
 
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/aboutTitle"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="50dp">
+        android:layout_marginStart="50dp">
 
     <!-- name -->
         <TextView
@@ -32,8 +32,6 @@
             android:textColor="@color/fontColour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/createTitle"
-            android:layout_alignStart="@+id/createTitle"
             android:layout_marginTop="40dp" />
 
 
@@ -41,9 +39,7 @@
         android:id="@+id/enterNameTxt"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nameLbl"
-        android:layout_alignStart="@+id/nameLbl"
-        android:inputType="textPersonName"
+            android:inputType="textPersonName"
         android:hint="@string/full_nameTXT"
         android:ems="10"
             style="@style/EditTextStyle" />
@@ -52,17 +48,13 @@
         <TextView
         android:id="@+id/userNameLbl"
         android:text="@string/usernameLbl"
-            style="@style/myTextViewsNINJA"
-        android:layout_below="@+id/enterNameTxt"
-        android:layout_alignStart="@+id/enterNameTxt" />
+            style="@style/myTextViewsNINJA" />
 
         <EditText
         android:id="@+id/enterUserName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userNameLbl"
-        android:layout_alignStart="@+id/nameLbl"
-        android:inputType="textPersonName"
+            android:inputType="textPersonName"
         android:hint="@string/chooseLoginTxt"
         android:ems="10"
         style="@style/EditTextStyle" />
@@ -70,18 +62,14 @@
     <!-- email -->
         <TextView
         android:id="@+id/emailLbl"
-        android:text="Email:"
-            style="@style/myTextViewsNINJA"
-        android:layout_below="@+id/enterUserName"
-        android:layout_alignStart="@+id/enterNameTxt" />
+        android:text="@string/email"
+            style="@style/myTextViewsNINJA" />
 
         <EditText
         android:id="@+id/enterEmail"
         android:layout_width="250dp"
+            android:inputType="textEmailAddress"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailLbl"
-        android:layout_alignStart="@+id/nameLbl"
-        android:inputType="textPersonName"
         android:hint="@string/emailTxt"
         android:ems="10"
         style="@style/EditTextStyle"/>
@@ -90,16 +78,12 @@
         <TextView
             android:id="@+id/passwordLbl"
             android:text="@string/passwordLbl"
-            style="@style/myTextViewsNINJA"
-            android:layout_below="@+id/enterUserName"
-            android:layout_alignStart="@+id/enterNameTxt" />
+            style="@style/myTextViewsNINJA" />
 
         <EditText
             android:id="@+id/passwordTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordLbl"
-            android:layout_alignStart="@+id/nameLbl"
             android:inputType="textPassword"
             android:hint="@string/choose_passHint"
             android:ems="10"
@@ -108,16 +92,12 @@
         <TextView
             android:id="@+id/passwordLbl2"
             android:text="@string/confirm_passwordLbl"
-            style="@style/myTextViewsNINJA"
-            android:layout_below="@+id/passwordTxt"
-            android:layout_alignStart="@+id/enterNameTxt" />
+            style="@style/myTextViewsNINJA" />
 
         <EditText
             android:id="@+id/passwordTxt2"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordLbl2"
-            android:layout_alignStart="@+id/nameLbl"
             android:inputType="textPassword"
             android:hint="@string/choose_passHint"
             android:ems="10"

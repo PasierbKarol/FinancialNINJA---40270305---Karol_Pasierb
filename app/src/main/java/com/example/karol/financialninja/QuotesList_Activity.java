@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 /* Author: Karol Pasierb - Software Engineering - 40270305
  * Created by Karol on 2017-02-08.
@@ -19,16 +20,30 @@ import android.view.View;
  * Last Update: 09/02/2017
  */
 
-public class QuizResultsActivity extends AppCompatActivity {
+public class QuotesList_Activity extends AppCompatActivity {
+
+    User_Singleton currentUser;
+    TextView personalQuotesTitle;
+    TextView quoteOfTheDayList;
+    TextView fullListOfQuotes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quiz_results);
+        setContentView(R.layout.quotes_list);
+        currentUser = User_Singleton.getUser_Instance();
+        personalQuotesTitle = (TextView) findViewById(R.id.personalQuotesTitle);
+        quoteOfTheDayList = (TextView) findViewById(R.id.quoteOfTheDayList);
+        fullListOfQuotes = (TextView) findViewById(R.id.fullListOfQuotes);
+
+
+        personalQuotesTitle.append(currentUser.getName());
+
     }
 
     public void returnToHome(View view) {
-        Intent quizCompleted = new Intent(QuizResultsActivity.this, HomeScreenActivity.class);
+        Intent quizCompleted = new Intent(QuotesList_Activity.this, Home_WelcomeUser_Activity.class);
         startActivity(quizCompleted);
     }
 }

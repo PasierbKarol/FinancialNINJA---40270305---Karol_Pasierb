@@ -42,7 +42,9 @@
         android:contentDescription=""
         android:onClick="readAboutTheApp"
         android:background="@drawable/text_border"
-        android:backgroundTint="@color/specialButton"/>
+        android:backgroundTint="@color/specialButton"
+
+        />
 
     <TextView
         android:id="@+id/welcomeInvitation"

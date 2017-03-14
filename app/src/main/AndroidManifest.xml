@@ -14,17 +14,19 @@
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".HomeScreenNEWactivity" />
-        <activity android:name=".QuizInfoActivity" />
-        <activity android:name=".QuizResultsActivity" />
+        <activity android:name=".Home_WelcomeUser_Activity" />
+        <activity android:name=".Home_WelcomeNEWuser_Activity" />
+        <activity android:name=".MainHome_Activity" />
+        <activity android:name=".QuotesList_Activity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".Question_Job"></activity>
+        <activity android:name=".Question_Job" />
+        <activity android:name=".AddQuote"></activity>
     </application>
 
 </manifest>

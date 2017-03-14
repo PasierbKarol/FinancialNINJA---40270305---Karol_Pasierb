@@ -26,7 +26,7 @@ import org.json.JSONObject;
  *  - log in confirmation button
  *
  *  Below is the code to react to the press of those buttons.
- *  User has to input username and password to access the app.
+ *  User_Singleton has to input username and password to access the app.
  *
  *  Future updates:
  *  - this page will use method calls to authenticate and authorize user's access to the app
@@ -52,7 +52,7 @@ public class LogInActivity extends AppCompatActivity{
 
     public void logInToAccount(View view) {
 
-        EditText username = (EditText) findViewById(R.id.enterUserName);
+        final EditText username = (EditText) findViewById(R.id.enterUserName);
         EditText password = (EditText) findViewById(R.id.passwordLoginTxt);
 
         final Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -66,9 +66,17 @@ public class LogInActivity extends AppCompatActivity{
                     boolean success = jsonResponse.getBoolean("success");
                     Log.i("Karol","Success = " + success);
                     if (success) {
-                        //String name = jsonResponse.getString("name");
-                        Intent logInToExistingAccount = new Intent(LogInActivity.this, HomeScreenActivity.class);
-                        //logInToExistingAccount.putExtra("name", name);
+
+                        //creating new user that will be used throughout the application
+                        User_Singleton currentUser = User_Singleton.getUser_Instance();
+                        currentUser.setUser_id(jsonResponse.getString("user_id"));
+                        String tempName = jsonResponse.getString("name");
+                        tempName = tempName.substring(0,1).toUpperCase() + tempName.substring(1);
+                        currentUser.setName(tempName);
+                        currentUser.setUserName(jsonResponse.getString("username"));
+                        Log.i("Karol","username test = " + currentUser.getUserName());
+                        Log.i("Karol","Success, USER ID = " + currentUser.getUser_id());
+                        Intent logInToExistingAccount = new Intent(LogInActivity.this, Home_WelcomeUser_Activity.class);
                         startActivity(logInToExistingAccount);
                     } else {
 

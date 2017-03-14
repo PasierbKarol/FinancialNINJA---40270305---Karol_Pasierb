@@ -53,7 +53,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     public void createNewAccount(View view) {
 
         EditText name = (EditText) findViewById(R.id.enterNameTxt);
-        EditText username = (EditText) findViewById(R.id.enterUserName);
+        final EditText username = (EditText) findViewById(R.id.enterUserName);
         EditText emailTxt = (EditText) findViewById(R.id.enterEmail);
         EditText passwordTxt = (EditText) findViewById(R.id.passwordTxt);
         EditText passwordTxtConfirm = (EditText) findViewById(R.id.passwordTxt2);
@@ -76,26 +76,40 @@ public class CreateAccountActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse (String response) {
-                        Log.i("Karol", "I'm inside onResponse");
+                        //Log.i("Karol", "I'm inside onResponse");
                         try {
                             Log.i("Karol", " Response is " + response);
                             //creating JSON object to receive the response from the server
-                           // JSONObject jsonObjectResponse = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
-                            JSONObject jsonObjectResponse = new JSONObject(response);
+                           JSONObject jsonObjectResponse = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
                             //this boolean is expecting to receive success message from server
                             boolean successResponse = jsonObjectResponse.getBoolean("success");
                             Log.i("Karol", "JSON and bool created");
                             //checking if the message was received correctly
                             if (successResponse) {
-                                Log.i("Karol", "I'm inside success");
-                                //if yes, we're starting next activity
-                                Intent createNewAccount = new Intent(CreateAccountActivity.this, HomeScreenNEWactivity.class );
+                                //if yes, we're creating new user and starting next activity
+
+
+                                //creating new user that will be used throughout the application
+                                User_Singleton currentUser = User_Singleton.getUser_Instance();
+                                currentUser.setUser_id(jsonObjectResponse.getString("user_id"));
+                                String tempName = jsonObjectResponse.getString("name");
+                                tempName = tempName.substring(0,1).toUpperCase() + tempName.substring(1);
+                                currentUser.setName(tempName);
+                                currentUser.setUserName(username.getText().toString().trim());
+
+
+
+                                Log.i("Karol","Success, USER ID = " + currentUser.getUser_id());
+                                Intent createNewAccount = new Intent(CreateAccountActivity.this, Home_WelcomeNEWuser_Activity.class );
                                 startActivity(createNewAccount);
                             } else  {
-                                Log.i("Karol", "I'm else and there should be alert box");
                                 //if no, create new alert dialog with the message about failure
                                 AlertDialog.Builder failedAccountCreationAlert= new AlertDialog.Builder(CreateAccountActivity.this);
-                                failedAccountCreationAlert.setMessage("Account Creation Unsuccessful!")
+                                String message = "Account Creation Unsuccessful!";
+                                if (jsonObjectResponse.getString("user_taken") != null ){
+                                    message = message + " " + jsonObjectResponse.getString("user_taken");
+                                }
+                                failedAccountCreationAlert.setMessage(message)
                                 .setNegativeButton("Retry", null)
                                 .create()
                                 .show();
@@ -107,11 +121,9 @@ public class CreateAccountActivity extends AppCompatActivity {
                     }
                 };
 
-                Log.i("Karol", "\nFuck!!!!!!!!!!!\n");
-
                 //performing account creation on the server
                 CreateAccountRequest createAccountRequest = new CreateAccountRequest(
-                        name.getText().toString(),
+                        name.getText().toString().toLowerCase(),
                         username.getText().toString(),
                         emailTxt.getText().toString().trim(),
                         passwordTxt.getText().toString(),

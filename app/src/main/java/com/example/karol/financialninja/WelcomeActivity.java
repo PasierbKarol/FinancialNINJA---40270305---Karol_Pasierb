@@ -33,8 +33,6 @@ import android.view.View;
 
 
     public void createAccountWelcome(View view) {
-        Log.i("Karol","Clicked");
-        //Button btnCreate = (Button) findViewById(R.id.createAccountBtn);
         Intent createAccount = new Intent(WelcomeActivity.this, CreateAccountActivity.class);
         WelcomeActivity.this.startActivity(createAccount);
     }

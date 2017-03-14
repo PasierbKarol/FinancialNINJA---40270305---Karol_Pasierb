@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.karol.financialninja.AddQuote">
+
+    <TextView
+        android:id="@+id/addQuoteTitle"
+        style="@style/myTextViewsNINJA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addQuoteTitle"
+        android:textAlignment="center"
+
+        android:textColor="@color/h2Title"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp" />
+
+    <TextView
+        android:id="@+id/quoteTitle"
+        style="@style/myTextViewsNINJA"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/addQuoteTitle"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:text="Quote text:" />
+
+    <EditText
+        android:id="@+id/quoteContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:inputType="textPersonName|textMultiLine"
+        android:scrollHorizontally="false"
+        android:hint="Enter your quote here..."
+        style="@style/EditTextStyle"
+        android:layout_below="@+id/quoteTitle"
+        android:layout_alignStart="@+id/quoteTitle" />
+
+    <TextView
+        android:id="@+id/authorTitle"
+        style="@style/myTextViewsNINJA"
+        android:layout_marginTop="15dp"
+        android:text="Author:"
+        android:layout_below="@+id/quoteContent"
+        android:layout_alignStart="@+id/quoteContent" />
+
+    <EditText
+        android:id="@+id/authorContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Enter author here..."
+        android:ems="10"
+        style="@style/EditTextStyle"
+        android:layout_below="@+id/authorTitle"
+        android:layout_alignStart="@+id/quoteContent" />
+
+    <Button
+        android:id="@+id/submitQuote"
+        style="@style/myButtonsNINJA"
+        android:layout_alignStart="@+id/authorContent"
+        android:layout_below="@+id/authorContent"
+        android:layout_marginTop="45dp"
+        android:text="@string/addQuotesBtn"
+        android:onClick="submitQuote"/>
+
+    <Button
+        android:id="@+id/cancelQuote"
+        style="@style/myButtonsNINJA"
+        android:text="@string/cancelBtn"
+        android:layout_alignBaseline="@+id/submitQuote"
+        android:layout_alignBottom="@+id/submitQuote"
+        android:layout_alignEnd="@+id/quoteContent"
+        android:onClick="cancelQuote"
+        />
+
+</RelativeLayout>

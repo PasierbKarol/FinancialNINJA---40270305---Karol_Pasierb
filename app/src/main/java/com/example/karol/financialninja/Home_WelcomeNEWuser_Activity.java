@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 
 /* Author: Karol Pasierb - Software Engineering - 40270305
@@ -25,16 +26,17 @@ import android.view.View;
  */
 
 
-public class HomeScreenNEWactivity extends AppCompatActivity {
+public class Home_WelcomeNEWuser_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screen_new);
+        setContentView(R.layout.home_welcome_new_user);
+
     }
 
-    public void startQuizFromHome(View view) {
-        Intent startQuiz = new Intent(HomeScreenNEWactivity.this, QuizInfoActivity.class);
-        startActivity(startQuiz);
+    public void goToMainHome(View view) {
+        Intent goToMainHome = new Intent(Home_WelcomeNEWuser_Activity.this, MainHome_Activity.class);
+        startActivity(goToMainHome);
     }
 
 }

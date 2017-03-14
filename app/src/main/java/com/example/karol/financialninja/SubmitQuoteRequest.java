@@ -8,29 +8,25 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
- * Created by Karol on 2017-02-15.
+ * Created by Karol on 2017-03-13.
  */
 
-public class CreateAccountRequest extends StringRequest{
-
+public class SubmitQuoteRequest extends StringRequest {
     //this variable provides url to our file on the server responsible for creating new users
-    private static final String CREATE_ACCOUNT_REQUEST_URL = "http://40270305.soc-web-liv-06.napier.ac.uk/financialninja/createUser.php";
+    private static final String SUBMIT_QUOTE_REQUEST_URL = "http://40270305.soc-web-liv-06.napier.ac.uk/financialninja/addQuote.php";
     private Map<String, String> params;
 
     //constructor takes parameters required for the account creation and sends them to the file on the server
-    public CreateAccountRequest(String name, String username, String email, String password, Response.Listener<String> myListener){
+    public SubmitQuoteRequest(String quote, String author, String user_id, Response.Listener<String> myListener){
 
-        super(Request.Method.POST, CREATE_ACCOUNT_REQUEST_URL, myListener, null);
+        super(Request.Method.POST, SUBMIT_QUOTE_REQUEST_URL, myListener, null);
         params = new HashMap<>();
-        params.put("name", name);
-        params.put("username", username);
-        params.put("email", email);
-        params.put("password", password);
+        params.put("quote", quote);
+        params.put("author", author);
+        params.put("user_id", user_id);
 
-
-        //Log.i("Karol", "url " + CREATE_ACCOUNT_REQUEST_URL.toString());
+       // Log.i("Karol", "url " + SUBMIT_QUOTE_REQUEST_URL.toString());
     }
 
     //@Override
@@ -38,4 +34,5 @@ public class CreateAccountRequest extends StringRequest{
        // Log.i("Karol", "params are " + params);
         return params;
     }
+
 }
