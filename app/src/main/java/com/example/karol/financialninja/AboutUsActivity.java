@@ -21,10 +21,13 @@ import android.view.View;
 
 public class AboutUsActivity extends AppCompatActivity {
 
+    User_Singleton currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+        currentUser = null;
     }
 
 

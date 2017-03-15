@@ -94,4 +94,5 @@
     <string name="email">Email:</string>
     <string name="ninja">Ninja</string>
     <string name="quote_to_remember">Your Quote to remember is:</string>
+    <string name="time_left_to_display_next_quote_quotes">Time left to display next quote quotes:</string>
 </resources>

@@ -37,13 +37,16 @@ public class QuotesList_Activity extends AppCompatActivity {
         quoteOfTheDayList = (TextView) findViewById(R.id.quoteOfTheDayList);
         fullListOfQuotes = (TextView) findViewById(R.id.fullListOfQuotes);
 
-
+        fullListOfQuotes.setText(currentUser.displayPersonalQuotes());
         personalQuotesTitle.append(currentUser.getName());
+
+
+
 
     }
 
-    public void returnToHome(View view) {
-        Intent quizCompleted = new Intent(QuotesList_Activity.this, Home_WelcomeUser_Activity.class);
-        startActivity(quizCompleted);
+    public void returnToMainHome(View view) {
+        Intent returnToMainHome = new Intent(QuotesList_Activity.this, MainHome_Activity.class);
+        startActivity(returnToMainHome);
     }
 }

@@ -37,11 +37,12 @@ public class Home_WelcomeUser_Activity extends AppCompatActivity {
         currentUser = User_Singleton.getUser_Instance();
 
         TextView welcomeBackTitle = (TextView) findViewById(R.id.homeTitle);
-        //welcomeBackTitle.append("Welcome back Ninja " + currentUser.getName().toString());
+        welcomeBackTitle.append("Welcome back Ninja " + currentUser.getName().toString());
     }
 
     public void goToMainHome(View view) {
         Intent goToMainHome = new Intent(Home_WelcomeUser_Activity.this, MainHome_Activity.class);
+        goToMainHome.putExtra("first_run", true);
         startActivity(goToMainHome);
     }
 

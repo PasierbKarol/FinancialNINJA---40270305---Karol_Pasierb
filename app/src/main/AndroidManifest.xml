@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/MyTheme">
+        <service android:name=".FinancialNinja_TimeService" />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +26,6 @@
         <activity android:name=".MainHome_Activity" />
         <activity android:name=".QuotesList_Activity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".Question_Job" />
         <activity android:name=".AddQuote"></activity>
     </application>
 

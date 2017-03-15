@@ -36,6 +36,7 @@ public class Home_WelcomeNEWuser_Activity extends AppCompatActivity {
 
     public void goToMainHome(View view) {
         Intent goToMainHome = new Intent(Home_WelcomeNEWuser_Activity.this, MainHome_Activity.class);
+        goToMainHome.putExtra("first_run", true);
         startActivity(goToMainHome);
     }
 

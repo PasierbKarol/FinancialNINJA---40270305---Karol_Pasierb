@@ -39,6 +39,17 @@ import org.json.JSONObject;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
+    private void resetUser(){
+        if (currentUser != null)
+        {
+            //currentUser.getmNotificationManager().cancelAll();
+            currentUser = null;
+            //stopService(new Intent(CreateAccountActivity.this, FinancialNinja_TimeService.class));
+        }
+    }
+
+    User_Singleton currentUser;
+
     //method for creating toast for whatever message we want to pass
     public void makeToast (String message){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
@@ -48,6 +59,12 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
+        resetUser();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resetUser();
     }
 
     public void createNewAccount(View view) {
@@ -90,16 +107,19 @@ public class CreateAccountActivity extends AppCompatActivity {
 
 
                                 //creating new user that will be used throughout the application
-                                User_Singleton currentUser = User_Singleton.getUser_Instance();
+                                currentUser = User_Singleton.getUser_Instance();
                                 currentUser.setUser_id(jsonObjectResponse.getString("user_id"));
                                 String tempName = jsonObjectResponse.getString("name");
                                 tempName = tempName.substring(0,1).toUpperCase() + tempName.substring(1);
                                 currentUser.setName(tempName);
                                 currentUser.setUserName(username.getText().toString().trim());
 
+                                //setting notification for the existing user
 
 
                                 Log.i("Karol","Success, USER ID = " + currentUser.getUser_id());
+
+                                //starting new activity with newly created user
                                 Intent createNewAccount = new Intent(CreateAccountActivity.this, Home_WelcomeNEWuser_Activity.class );
                                 startActivity(createNewAccount);
                             } else  {

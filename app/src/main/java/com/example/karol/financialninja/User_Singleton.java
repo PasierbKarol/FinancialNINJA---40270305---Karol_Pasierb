@@ -18,7 +18,9 @@ package com.example.karol.financialninja;
  * Last Update: 14/02/2017
  */
 
+import android.app.NotificationManager;
 import android.content.Context;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import java.io.FileInputStream;
@@ -28,8 +30,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class User_Singleton implements Serializable
 {
@@ -37,22 +37,24 @@ public class User_Singleton implements Serializable
     private static final long serialVersionUID = 666L;
     //instance fields with getters and setters
     private ArrayList<String> personalQuotes = new ArrayList<String>();
-
     public ArrayList<String> getPersonalQuotes() {
-        Log.i("Karol", "Quotes number is " + this.personalQuotes.size());
-
-        for (String text : personalQuotes) {
-            Log.i("Karol", "Quotes are " + text );
-        }
-
         return personalQuotes;
     }
 
+    public String displayPersonalQuotes() {
+        int i = 1;
+        String quotesList = "";
+        for (String quote : personalQuotes) {
+            //Log.i("Karol", "Quotes are " + quote );
+            quotesList += i + ": " + quote + ".\n";
+            i++;
+        }
+        return quotesList;
+    }
+
     public void setPersonalQuotes(String quote, String author) {
-        Log.i("Karol", "Quotes number before is " + this.personalQuotes.size());
+        author = author.substring(0,1).toUpperCase() + author.substring(1);
                 this.personalQuotes.add(quote + ", by: " + author);
-        Log.i("Karol", "Quote added to the list");
-        Log.i("Karol", "Quotes number after is " + this.personalQuotes.size());
     }
 
 
@@ -101,22 +103,6 @@ public class User_Singleton implements Serializable
 
 
 
-
-
-
-/*
-    public boolean isNewUser() {
-
-        return newUser;
-    }
-    public void setNewUser(boolean newUser) {
-        this.newUser = newUser;
-    }
-*/
-
-
-
-
     public static User_Singleton user_Instance;
     public static User_Singleton getUser_Instance() {
         if (user_Instance == null) {
@@ -124,9 +110,6 @@ public class User_Singleton implements Serializable
         }
         return user_Instance;
     }
-
-
-
     private User_Singleton() {
     }
 
@@ -137,15 +120,6 @@ public class User_Singleton implements Serializable
     private transient FileInputStream serializerIn;
     private transient ObjectInputStream inputSerializer;
     private transient ObjectOutputStream outputSerializer;
-
-
-    public String displayQuote(){
-        String quote = "";
-
-
-        return quote;
-    }
-
 
     public void readQuotesOnStartup (Context context){
         dbFilename =  "user-"+getUserName()+".bin";
@@ -172,7 +146,6 @@ public class User_Singleton implements Serializable
         //Once the data is loaded at the startup we print it to check if it worked
        getPersonalQuotes();
     }
-
     public void  saveQuotes (Context context) {
         dbFilename =  "user-"+getUserName()+".bin";
         try {
@@ -187,4 +160,7 @@ public class User_Singleton implements Serializable
             Log.i("Karol", "Saving error is " + e.toString());
         }
     }
+
+
+
 }

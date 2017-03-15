@@ -3,7 +3,6 @@ package com.example.karol.financialninja;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 
 
@@ -25,12 +24,30 @@ import android.view.View;
  */
     public class WelcomeActivity extends AppCompatActivity {
 
+    User_Singleton currentUser;
+
+
+    private void resetUser(){
+        if (currentUser != null)
+        {
+            //currentUser.getmNotificationManager().cancelAll();
+            currentUser = null;
+            //stopService(new Intent(WelcomeActivity.this, FinancialNinja_TimeService.class));
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
+        resetUser();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resetUser();
+    }
 
     public void createAccountWelcome(View view) {
         Intent createAccount = new Intent(WelcomeActivity.this, CreateAccountActivity.class);
