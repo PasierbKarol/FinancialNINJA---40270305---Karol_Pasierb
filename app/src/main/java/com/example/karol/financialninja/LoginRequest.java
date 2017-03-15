@@ -1,11 +1,8 @@
 package com.example.karol.financialninja;
 
-import android.util.Log;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +10,7 @@ import java.util.Map;
  * Created by Karol on 2017-02-15.
  */
 
-public class LoginRequest extends StringRequest{
+public class LoginRequest extends StringRequest {
 
     //this variable provides url to our file on the server responsible for creating new users
     private static final String LOGIN_REQUEST_URL = "http://40270305.soc-web-liv-06.napier.ac.uk/financialninja/login.php";
@@ -26,7 +23,6 @@ public class LoginRequest extends StringRequest{
         params = new HashMap<>();
         params.put("username", username);
         params.put("password", password);
-
     }
 
     //@Override

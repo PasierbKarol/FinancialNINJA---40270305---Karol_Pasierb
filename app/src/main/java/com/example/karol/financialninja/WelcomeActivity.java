@@ -7,7 +7,7 @@ import android.view.View;
 
 
 
-/* Author: Karol Pasierb - Software Engineering - 40270305
+/** Author: Karol Pasierb - Software Engineering - 40270305
  *
  * Description:
  * This activity contains the code for all the actions of the first screen that appears when the app starts
@@ -20,33 +20,24 @@ import android.view.View;
  *
  * Design Patterns Used:
  *
- * Last Update: 09/02/2017
+ * Last Update: 15/03/2017
  */
     public class WelcomeActivity extends AppCompatActivity {
 
     User_Singleton currentUser;
 
 
-    private void resetUser(){
-        if (currentUser != null)
-        {
-            //currentUser.getmNotificationManager().cancelAll();
-            currentUser = null;
-            //stopService(new Intent(WelcomeActivity.this, FinancialNinja_TimeService.class));
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
-        resetUser();
+        currentUser = User_Singleton.resetUser(currentUser);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        resetUser();
+        currentUser = User_Singleton.resetUser(currentUser);
     }
 
     public void createAccountWelcome(View view) {
@@ -55,20 +46,13 @@ import android.view.View;
     }
 
     public void logInWelcome(View view) {
-
         Intent logInActivity = new Intent(WelcomeActivity.this, LogInActivity.class);
         startActivity(logInActivity);
     }
 
-
-
-        public void readAboutTheApp(View view) {
+    public void readAboutTheApp(View view) {
             Intent readAboutApp = new Intent(WelcomeActivity.this, AboutUsActivity.class );
             startActivity(readAboutApp);
         }
-
-
-
-
 
 }

@@ -23,10 +23,16 @@
         <activity android:name=".LogInActivity" />
         <activity android:name=".Home_WelcomeUser_Activity" />
         <activity android:name=".Home_WelcomeNEWuser_Activity" />
-        <activity android:name=".MainHome_Activity" />
+        <activity android:name=".MainHome_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".QuotesList_Activity" />
         <activity android:name=".AboutUsActivity" />
-        <activity android:name=".AddQuote"></activity>
+        <activity android:name=".AddQuote"/>
     </application>
 
 </manifest>

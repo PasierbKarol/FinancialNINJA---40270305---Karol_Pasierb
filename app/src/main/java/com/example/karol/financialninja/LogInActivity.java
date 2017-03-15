@@ -19,7 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-/* Author: Karol Pasierb - Software Engineering - 40270305
+/** Author: Karol Pasierb - Software Engineering - 40270305
  * Created by Karol on 2017-02-08.
  *
  * Description:
@@ -36,50 +36,24 @@ import org.json.JSONObject;
  *
  * Design Patterns Used:
  *
- * Last Update: 09/02/2017
+ * Last Update: 14/03/2017
  */
 
 
 public class LogInActivity extends AppCompatActivity{
 
     User_Singleton currentUser;
-    SharedPreferences sharedpreferences;
 
-    private void resetUser(){
-        if (currentUser != null)
-        {
-            //currentUser.getmNotificationManager().cancelAll();
-            currentUser = null;
-            boolean test = isMyServiceRunning(FinancialNinja_TimeService.class);
-            Toast.makeText(this, "is my service running " + test, Toast.LENGTH_SHORT).show();
-            //stopService(new Intent(LogInActivity.this, FinancialNinja_TimeService.class));
-        }
-    }
-
-    private boolean isMyServiceRunning(Class<FinancialNinja_TimeService> serviceClass) {
-        ActivityManager manager = (ActivityManager) getSystemService(this.ACTIVITY_SERVICE);
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-            if (serviceClass.getName().equals(service.service.getClassName())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private String mypPeference = "ninjaPreferences";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        sharedpreferences = this.getSharedPreferences(
-                "com.example.karol", this.MODE_PRIVATE);
-        resetUser();
-
+        currentUser = User_Singleton.resetUser(currentUser);
     }
     @Override
     protected void onResume() {
         super.onResume();
-        resetUser();
+        currentUser = User_Singleton.resetUser(currentUser);
     }
 
     public void returnToWelcomeScreen(View view) {
@@ -87,21 +61,24 @@ public class LogInActivity extends AppCompatActivity{
         startActivity(cancelAccountCreation);
     }
 
+
     public void logInToAccount(View view) {
 
         final EditText username = (EditText) findViewById(R.id.enterUserName);
         EditText password = (EditText) findViewById(R.id.passwordLoginTxt);
 
+        //response listener for checking the response that comes back from the server
         final Response.Listener<String> responseListener = new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
+
                 try {
                     //creating JSON object to receive the response from the server
                     JSONObject jsonResponse = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
                     boolean success = jsonResponse.getBoolean("success");
-                    if (success) {
 
+                    if (success) {
                         //creating new user that will be used throughout the application
                         currentUser = User_Singleton.getUser_Instance();
                         currentUser.setUser_id(jsonResponse.getString("user_id"));
@@ -109,13 +86,6 @@ public class LogInActivity extends AppCompatActivity{
                         tempName = tempName.substring(0,1).toUpperCase() + tempName.substring(1);
                         currentUser.setName(tempName);
                         currentUser.setUserName(jsonResponse.getString("username"));
-
-
-
-
-                        //SharedPreferences.Editor editor = sharedpreferences.edit();
-                        //editor.putString("dupa", "chuj");
-
 
 
                         //starting new activity with existing user

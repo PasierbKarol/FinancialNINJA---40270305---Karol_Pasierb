@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-/* Author: Karol Pasierb - Software Engineering - 40270305
+/** Author: Karol Pasierb - Software Engineering - 40270305
  * Created by Karol on 2017-02-14.
  *
  * Description:
@@ -26,6 +26,7 @@ public class Validator {
     private View viewGroup;
     private String emailTxt;
     private boolean validEmail;
+
     //booleans set to check the password validity
     private boolean validPassword = false;
     private boolean hasNumbers = false;

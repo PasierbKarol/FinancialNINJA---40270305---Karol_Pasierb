@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="wrap_content">
 
 
     <!-- title -->
@@ -17,13 +17,14 @@
     <LinearLayout
         android:id="@+id/LinearLayout_Create"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/aboutTitle"
         android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginBottom="50dp">
 
         <ImageView
@@ -31,7 +32,8 @@
             android:layout_marginTop="20dp"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:src="@drawable/legoninja"/>
+            android:src="@drawable/legoninja"
+            android:contentDescription="@string/ninja" />
 
 
     <!-- login -->
@@ -39,17 +41,13 @@
         android:id="@+id/userNameLbl"
         android:text="@string/usernameLbl"
         android:textSize="16sp"
-        android:layout_below="@+id/logInIMG"
-        android:layout_alignStart="@+id/enterNameTxt"
             style="@style/myTextViewsNINJA" />
 
         <EditText
         android:id="@+id/enterUserName"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userNameLbl"
-        android:layout_alignStart="@+id/nameLbl"
-        android:inputType="textPersonName"
+            android:inputType="textPersonName"
         android:hint="@string/enter_your_loginTxt"
         android:ems="10"
             style="@style/EditTextStyle"
@@ -61,16 +59,12 @@
             android:id="@+id/passwordLbl"
             android:text="@string/passwordLbl"
             android:textSize="16sp"
-            android:layout_below="@+id/enterUserName"
-            android:layout_alignStart="@+id/enterNameTxt"
             style="@style/myTextViewsNINJA"/>
 
         <EditText
             android:id="@+id/passwordLoginTxt"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/passwordLbl"
-            android:layout_alignStart="@+id/nameLbl"
             android:inputType="textPassword"
             android:hint="@string/enter_your_passwordTxt"
             android:ems="10"
@@ -81,22 +75,18 @@
         <LinearLayout
             android:id="@+id/LLrecoverPassword"
             android:orientation="horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/passwordLoginTxt">
+            android:layout_height="fill_parent">
 
         <TextView
             android:id="@+id/forgotPasswordTxt"
             style="@style/myTextViewsNINJA"
+            android:textAlignment="center"
             android:text="@string/forgot_your_passwordTxt" />
 
         <TextView
             android:id="@+id/recoverPassword"
-            android:layout_marginLeft="10dp"
-            android:layout_alignStart="@+id/forgotPasswordTxt"
-            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
             android:text="@string/recover_passwordLink"
             style="@style/myTextViewsNINJA"
             android:textColor="@color/colorPrimaryDark"
@@ -125,7 +115,7 @@
         style="@style/myButtonsNINJA"
         android:onClick="returnToWelcomeScreen"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/LinearLayout_Create" />
+        android:layout_alignStart="@+id/createTitle" />
 
 
 </RelativeLayout>

@@ -14,25 +14,15 @@
         style="@style/MyHeadingStyle"
         android:text="@string/welcome_new_ninjaTitle" />
 
-    <TextView
-        android:id="@+id/quoteOfTheDayHomeWelcome"
-        android:text=""
-        android:textSize="20sp"
-        android:textColor="@color/h2Title"
-        android:textStyle="italic"
-        android:layout_below="@+id/homeTitle"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="25dp"
-        style="@style/myTextViewsNINJA"
-         />
-
     <ImageView
         android:id="@+id/ninjaLevelIMG"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
         app:srcCompat="@drawable/determinedninja"
-        android:layout_below="@+id/quoteOfTheDayHomeWelcome"
-        android:layout_alignStart="@+id/quoteOfTheDayHomeWelcome"
+        android:layout_below="@+id/homeTitle"
         android:contentDescription="@string/ninja" />
 
     <TextView

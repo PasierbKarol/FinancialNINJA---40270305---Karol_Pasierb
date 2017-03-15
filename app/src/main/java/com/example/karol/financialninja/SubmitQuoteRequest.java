@@ -25,13 +25,10 @@ public class SubmitQuoteRequest extends StringRequest {
         params.put("quote", quote);
         params.put("author", author);
         params.put("user_id", user_id);
-
-       // Log.i("Karol", "url " + SUBMIT_QUOTE_REQUEST_URL.toString());
     }
 
     //@Override
     public Map<String, String> getParams() {
-       // Log.i("Karol", "params are " + params);
         return params;
     }
 

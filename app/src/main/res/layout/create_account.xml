@@ -17,6 +17,7 @@
     <LinearLayout
         android:id="@+id/LinearLayout_Create"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_centerHorizontal="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -110,7 +111,7 @@
         android:id="@+id/cancelBtn"
         android:text="@string/cancelBtn"
         android:layout_below="@+id/LinearLayout_Create"
-        android:layout_alignStart="@+id/LinearLayout_Create"
+        android:layout_alignStart="@+id/createTitle"
         android:layout_marginTop="15dp"
         style="@style/myButtonsNINJA"
         android:onClick="returnToWelcomeScreen"/>

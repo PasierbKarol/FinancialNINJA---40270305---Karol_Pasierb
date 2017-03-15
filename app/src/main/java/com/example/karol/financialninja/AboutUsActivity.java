@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/* Author: Karol Pasierb - Software Engineering - 40270305
+/** Author: Karol Pasierb - Software Engineering - 40270305
  * Created by Karol on 2017-02-08.
  *
  * Description:

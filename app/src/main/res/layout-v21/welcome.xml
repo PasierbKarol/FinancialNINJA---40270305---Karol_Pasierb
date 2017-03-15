@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/welcomeDescription"
-        android:contentDescription=""
+        android:contentDescription="@string/ninja"
         android:onClick="readAboutTheApp"
         android:background="@drawable/text_border"
         android:backgroundTint="@color/specialButton"
@@ -54,6 +54,7 @@
         android:textColor="@color/colorPrimary"
         android:layout_below="@+id/helpWelcomeBtn"
         android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
         android:background="@color/description" />
 
     <!-- Buttons -->

@@ -8,16 +8,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
- /* Author: Karol Pasierb - Software Engineering - 40270305
+ /** Author: Karol Pasierb - Software Engineering - 40270305
  * Created by Karol on 2017-02-08.
  *
  * Description:
@@ -32,43 +30,31 @@ import org.json.JSONObject;
  *
  * Design Patterns Used:
  *
- * Last Update: 14/02/2017
+ * Last Update: 15/03/2017
  */
 
 
 
 public class CreateAccountActivity extends AppCompatActivity {
 
-    private void resetUser(){
-        if (currentUser != null)
-        {
-            //currentUser.getmNotificationManager().cancelAll();
-            currentUser = null;
-            //stopService(new Intent(CreateAccountActivity.this, FinancialNinja_TimeService.class));
-        }
-    }
-
     User_Singleton currentUser;
 
-    //method for creating toast for whatever message we want to pass
-    public void makeToast (String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
-        resetUser();
+        currentUser = User_Singleton.resetUser(currentUser);
     }
     @Override
     protected void onResume() {
         super.onResume();
-        resetUser();
+
     }
 
     public void createNewAccount(View view) {
 
+        //accessing UI elements
         EditText name = (EditText) findViewById(R.id.enterNameTxt);
         final EditText username = (EditText) findViewById(R.id.enterUserName);
         EditText emailTxt = (EditText) findViewById(R.id.enterEmail);
@@ -89,23 +75,20 @@ public class CreateAccountActivity extends AppCompatActivity {
             if (validator.isPasswordValid() == true && validator.isEmailValid() == true
                     && validator.isEmpty() == false && validator.isNameFormatValid() == true ) {
 
+                //response listener for getting the response from the server in order to create the account
                 final Response.Listener<String> responseListener = new Response.Listener<String>(){
-
                     @Override
                     public void onResponse (String response) {
-                        //Log.i("Karol", "I'm inside onResponse");
+
                         try {
-                            Log.i("Karol", " Response is " + response);
                             //creating JSON object to receive the response from the server
-                           JSONObject jsonObjectResponse = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
+                            JSONObject jsonObjectResponse = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
                             //this boolean is expecting to receive success message from server
                             boolean successResponse = jsonObjectResponse.getBoolean("success");
-                            Log.i("Karol", "JSON and bool created");
+                            Log.i("Karol", "Bool =  " + successResponse);
                             //checking if the message was received correctly
                             if (successResponse) {
                                 //if yes, we're creating new user and starting next activity
-
-
                                 //creating new user that will be used throughout the application
                                 currentUser = User_Singleton.getUser_Instance();
                                 currentUser.setUser_id(jsonObjectResponse.getString("user_id"));
@@ -114,10 +97,9 @@ public class CreateAccountActivity extends AppCompatActivity {
                                 currentUser.setName(tempName);
                                 currentUser.setUserName(username.getText().toString().trim());
 
+
                                 //setting notification for the existing user
 
-
-                                Log.i("Karol","Success, USER ID = " + currentUser.getUser_id());
 
                                 //starting new activity with newly created user
                                 Intent createNewAccount = new Intent(CreateAccountActivity.this, Home_WelcomeNEWuser_Activity.class );
@@ -126,9 +108,12 @@ public class CreateAccountActivity extends AppCompatActivity {
                                 //if no, create new alert dialog with the message about failure
                                 AlertDialog.Builder failedAccountCreationAlert= new AlertDialog.Builder(CreateAccountActivity.this);
                                 String message = "Account Creation Unsuccessful!";
+
+
                                 if (jsonObjectResponse.getString("user_taken") != null ){
                                     message = message + " " + jsonObjectResponse.getString("user_taken");
                                 }
+
                                 failedAccountCreationAlert.setMessage(message)
                                 .setNegativeButton("Retry", null)
                                 .create()
@@ -159,6 +144,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             } else if(!validator.isNameFormatValid()){
                 makeToast("Please enter the valid name.");
             } else {
+                    //further Toast notifications in case of incorrect data
                     if (!validator.isEmailValid()) {
                         if (!validator.isPasswordValid()) {
                             makeToast("Your email and password are in wrong format");
@@ -180,6 +166,11 @@ public class CreateAccountActivity extends AppCompatActivity {
     public void returnToWelcomeScreen(View view) {
         Intent cancelAccountCreation = new Intent(CreateAccountActivity.this, WelcomeActivity.class);
         startActivity(cancelAccountCreation);
-        Log.i("Karol","Name is");
     }
+
+    //method for creating toast for whatever message we want to pass
+    public void makeToast (String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
 }

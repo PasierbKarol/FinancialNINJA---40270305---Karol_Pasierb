@@ -19,7 +19,7 @@
         android:id="@+id/quizInfoIMG"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/ninjamain"
+        app:srcCompat="@drawable/businessninja"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
         android:layout_below="@+id/mainHomeTitle"
@@ -30,6 +30,7 @@
         android:id="@+id/quoteToRememberTitle"
         android:layout_below="@id/quizInfoIMG"
         android:layout_marginTop="-10dp"
+        android:layout_alignParentStart="true"
         style="@style/myTextViewsNINJA"
         android:text="@string/quote_to_remember"
         android:textColor="@color/fontColour"
@@ -75,13 +76,23 @@
         android:onClick="showQuotesSettings"
        />
 
+    <Button
+        android:id="@+id/logOutBtn"
+        android:text="Log Out"
+        android:layout_below="@+id/addQuotesBtn"
+        android:layout_alignStart="@+id/mainHomeTitle"
+        style="@style/myButtonsNINJA"
+        android:layout_marginBottom="0dp"
+        android:onClick="logOut"
+        />
+
    <GridLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_below="@+id/quoteSettingsBtn"
        android:visibility="invisible"
        android:layout_marginStart="10dp"
-       android:layout_marginEnd="10dp"
+       android:layout_marginBottom="50dp"
        android:id="@+id/changeSettingsForQuotes">
 
        <TextView
@@ -108,8 +119,6 @@
        <Button
            android:id="@+id/setNewQuoteTimeBtn"
            android:text="Set Time"
-           android:layout_below="@+id/addQuotesBtn"
-           android:layout_alignEnd="@+id/mainHomeTitle"
            style="@style/myButtonsNINJA"
            android:layout_marginBottom="0dp"
            android:layout_column="1"
@@ -126,6 +135,7 @@
            android:layout_column="0"
            android:layout_columnSpan="2"
            android:layout_row="2"
+
            />
    </GridLayout>
 

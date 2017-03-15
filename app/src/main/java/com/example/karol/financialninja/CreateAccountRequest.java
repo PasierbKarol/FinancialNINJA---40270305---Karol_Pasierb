@@ -1,11 +1,8 @@
 package com.example.karol.financialninja;
 
-import android.util.Log;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,14 +25,10 @@ public class CreateAccountRequest extends StringRequest{
         params.put("username", username);
         params.put("email", email);
         params.put("password", password);
-
-
-        //Log.i("Karol", "url " + CREATE_ACCOUNT_REQUEST_URL.toString());
     }
 
     //@Override
     public Map<String, String> getParams() {
-       // Log.i("Karol", "params are " + params);
         return params;
     }
 }

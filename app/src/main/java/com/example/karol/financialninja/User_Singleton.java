@@ -1,28 +1,8 @@
 package com.example.karol.financialninja;
 
-/* Author: Karol Pasierb - Software Engineering - 40270305
- * Created by Karol on 2017-02-08.
- *
- * Description:
- * This class is the main class of the whole application that takes responsibility over the User_Singleton and its data
- * This class will be serialized and send to the server to save the existing user's data
- *
- *  Future updates:
- *   - do we need Singleton for the user? Would that allow to create other users?
- *   - perhaps instead of Singleton we need some logger class that would be a Singleton
- *   - user's password must be stored encrypted on the server
- *   - find out if all of those fields should be in current class or aditional classes are needed
- * - explain teh email validity code
- * Design Patterns Used:
- *
- * Last Update: 14/02/2017
- */
-
 import android.app.NotificationManager;
 import android.content.Context;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,32 +11,45 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/** Author: Karol Pasierb - Software Engineering - 40270305
+ * Created by Karol on 2017-02-08.
+ *
+ * Description:
+ * This class is the main class of the whole application that takes responsibility over the User and its data
+ * This class will be serialized  to save user's quotes locally
+ * All other user's data is kept on the server in the database
+ *
+ *  Future updates:
+ *   - user's password must be stored encrypted on the server
+ *
+ * Design Patterns Used:
+ * This class was designed with the use of Singleton Pattern
+ * as there can be only one user logged in at the current time.
+ * Each activity uses the same instance. In case of user would go back
+ * to login, create account or home activities its instance is erased. It becomes null.
+ * This is the simplest version of logging out.
+ *
+ * Last Update: 15/03/2017
+ */
+
+
+
 public class User_Singleton implements Serializable
 {
 
+    //code for serialization
     private static final long serialVersionUID = 666L;
+
+
     //instance fields with getters and setters
     private ArrayList<String> personalQuotes = new ArrayList<String>();
     public ArrayList<String> getPersonalQuotes() {
         return personalQuotes;
     }
-
-    public String displayPersonalQuotes() {
-        int i = 1;
-        String quotesList = "";
-        for (String quote : personalQuotes) {
-            //Log.i("Karol", "Quotes are " + quote );
-            quotesList += i + ": " + quote + ".\n";
-            i++;
-        }
-        return quotesList;
-    }
-
     public void setPersonalQuotes(String quote, String author) {
         author = author.substring(0,1).toUpperCase() + author.substring(1);
-                this.personalQuotes.add(quote + ", by: " + author);
+        this.personalQuotes.add(quote + ", by: " + author);
     }
-
 
     private String name;
     public String getName() {
@@ -76,7 +69,6 @@ public class User_Singleton implements Serializable
         this.userName = userName;
     }
 
-
     private String user_id;
     public String getUser_id() {
         return user_id;
@@ -85,24 +77,8 @@ public class User_Singleton implements Serializable
         this.user_id = user_id;
     }
 
-    private String quote_content;
-    public String getQuote_content() {
-        return quote_content;
-    }
-    public void setQuote_content(String quote_content) {
-        this.quote_content = quote_content;
-    }
 
-    private  String quote_author;
-    public String getQuote_author() {
-        return quote_author;
-    }
-    public void setQuote_author(String quote_author) {
-        this.quote_author = quote_author;
-    }
-
-
-
+    //Class instance variable and the constructor
     public static User_Singleton user_Instance;
     public static User_Singleton getUser_Instance() {
         if (user_Instance == null) {
@@ -122,10 +98,13 @@ public class User_Singleton implements Serializable
     private transient ObjectOutputStream outputSerializer;
 
     public void readQuotesOnStartup (Context context){
+        //creating unique filename for each user
         dbFilename =  "user-"+getUserName()+".bin";
         try {
             serializerIn = context.openFileInput(dbFilename);
             inputSerializer = new ObjectInputStream(serializerIn);
+
+            //trying to fill in the object with the data from the file
             try {
                 personalQuotes = (ArrayList<String>) inputSerializer.readObject();
             } catch (IOException e) {
@@ -137,6 +116,8 @@ public class User_Singleton implements Serializable
             }
             inputSerializer.close();
             serializerIn.close();
+
+            //confirmation log
             Log.i("Karol", "File loaded! Filename " + dbFilename);
         } catch (IOException e) {
             e.printStackTrace();
@@ -146,7 +127,10 @@ public class User_Singleton implements Serializable
         //Once the data is loaded at the startup we print it to check if it worked
        getPersonalQuotes();
     }
+
     public void  saveQuotes (Context context) {
+        //creating unique file for each user.
+        //name required in case if file would not exist
         dbFilename =  "user-"+getUserName()+".bin";
         try {
             serializerOut = context.openFileOutput(dbFilename, Context.MODE_PRIVATE);
@@ -154,6 +138,8 @@ public class User_Singleton implements Serializable
             outputSerializer.writeObject(personalQuotes);
             outputSerializer.close();
             serializerOut.close();
+
+            //confirmation log
             Log.i("Karol", "File saved! Filename " + dbFilename);
         } catch (IOException e) {
             e.printStackTrace();
@@ -161,6 +147,34 @@ public class User_Singleton implements Serializable
         }
     }
 
+    //method for displaying all quotes
+    public String displayPersonalQuotes() {
+        int i = 1;
+        String quotesList = "";
+        for (String quote : personalQuotes) {
+            quotesList += i + ": " + quote + ".\n\n";
+            i++;
+        }
+        return quotesList;
+    }
 
 
+    //static method to destroy the user and log out
+    public static User_Singleton resetUser(User_Singleton userSent){
+        if (userSent != null){
+            userSent = null;
+            //disactivas
+            DisplayNotification notification = DisplayNotification.getNotificationServiceInstance();
+            notification.notificationActive = false;
+            NotificationManager mNotificationManager = notification.getmNotificationManager();
+            if (mNotificationManager != null) {
+                mNotificationManager.cancelAll();
+            }
+
+            return  userSent;
+        }
+        else {
+            return userSent;
+        }
+    }
 }
