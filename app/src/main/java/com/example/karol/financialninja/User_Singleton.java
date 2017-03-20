@@ -40,6 +40,8 @@ public class User_Singleton implements Serializable
     //code for serialization
     private static final long serialVersionUID = 666L;
 
+    //static int for displaying quotes correctly regardless in which activity user is currently in
+    public static int quoteToDisplayNumber = 0;
 
     //instance fields with getters and setters
     private ArrayList<String> personalQuotes = new ArrayList<String>();
@@ -159,22 +161,8 @@ public class User_Singleton implements Serializable
     }
 
 
-    //static method to destroy the user and log out
-    public static User_Singleton resetUser(User_Singleton userSent){
-        if (userSent != null){
-            userSent = null;
-            //disactivas
-            DisplayNotification notification = DisplayNotification.getNotificationServiceInstance();
-            notification.notificationActive = false;
-            NotificationManager mNotificationManager = notification.getmNotificationManager();
-            if (mNotificationManager != null) {
-                mNotificationManager.cancelAll();
-            }
-
-            return  userSent;
-        }
-        else {
-            return userSent;
-        }
+    public static void resetUser(){
+        user_Instance = null;
     }
+
 }

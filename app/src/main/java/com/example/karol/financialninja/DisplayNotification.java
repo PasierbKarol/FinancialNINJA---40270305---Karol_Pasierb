@@ -4,6 +4,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v4.app.NotificationCompat;
 
 /**
@@ -12,7 +13,19 @@ import android.support.v4.app.NotificationCompat;
 
 public class DisplayNotification {
 
+    //used for log out
     public boolean notificationActive = false;
+
+
+    //timer to be held by the notification objects as it is used by them
+    private static CountDownTimer quoteTimer;
+    public static CountDownTimer getQuoteTimer() {
+        return quoteTimer;
+    }
+    public static void setQuoteTimer(CountDownTimer quoteTimer) {
+        DisplayNotification.quoteTimer = quoteTimer;
+    }
+
 
     private DisplayNotification(){
 
@@ -26,6 +39,7 @@ public class DisplayNotification {
         return notificationServiceInstance;
     }
 
+    //serial code is used for notifying notification manager we are updating it rather than create new service
     private int serialCode = 667;
     private  NotificationCompat.Builder mBuilder;
     private NotificationManager mNotificationManager;
@@ -34,7 +48,10 @@ public class DisplayNotification {
         return mNotificationManager;
     }
 
+
+    //methods for using notifications
     public void showNotification(Context context, String quote){
+        //when this method starts notification gets activated
         notificationActive = true;
 
         mBuilder =  new NotificationCompat.Builder(context)
@@ -45,9 +62,11 @@ public class DisplayNotification {
                 .setPriority(2)
                 .setVisibility(1);
 
+        //intent is used when user wants to get back to teh application from the notificatuion
         Intent resultIntent = new Intent(context, MainHome_Activity.class);
         resultIntent.setAction("android.intent.action.VIEW");
         resultIntent.addCategory("android.intent.category.DEFAULT");
+
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         mBuilder.setContentIntent(resultPendingIntent);
 
@@ -65,4 +84,13 @@ public class DisplayNotification {
         mNotificationManager.notify(serialCode, mBuilder.build());
     }
 
+    public void resetNotification(){
+            notificationActive = false;
+
+            if (mNotificationManager != null) {
+                mNotificationManager.cancelAll();
+                mNotificationManager = null;
+            }
+        notificationServiceInstance = null;
+    }
 }

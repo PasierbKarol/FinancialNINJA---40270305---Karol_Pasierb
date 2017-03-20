@@ -48,12 +48,12 @@ public class LogInActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        currentUser = User_Singleton.resetUser(currentUser);
+        //currentUser = User_Singleton.resetUser(currentUser);
     }
     @Override
     protected void onResume() {
         super.onResume();
-        currentUser = User_Singleton.resetUser(currentUser);
+         User_Singleton.resetUser();
     }
 
     public void returnToWelcomeScreen(View view) {

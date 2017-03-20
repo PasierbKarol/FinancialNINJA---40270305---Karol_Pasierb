@@ -1,6 +1,7 @@
 package com.example.karol.financialninja;
 
 import android.app.ActivityManager;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -37,16 +38,23 @@ public class MainHome_Activity extends AppCompatActivity {
     //reference variables for later use
     User_Singleton currentUser;
     CountDownTimer quoteTimer;
-    int timeToDisplayQuote = 60000;
-    int quoteToDisplay = 0;
-    int quotesTotal;
-    TextView quoteOfTheDay;
-    TextView quoteToRememberTitle;
-    MediaPlayer soundEffectPlayer;
-    boolean first_run = false;
-    String displayedQuote;
     DisplayNotification notificationService;
 
+    //time we pass to the timer
+    int timeToDisplayQuote = 30000;
+    int quotesTotal;
+
+    //textvies that will change their content
+    TextView quoteOfTheDayView;
+    TextView quoteToRememberTitle;
+    TextView welcomeBackTitle;
+
+    MediaPlayer soundEffectPlayer;
+    boolean first_run = false;
+    boolean newTimeSet = false;
+
+    //content of the current quote to be displayed
+    String displayedQuote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,29 +70,29 @@ public class MainHome_Activity extends AppCompatActivity {
             }
         }
         setContentView(R.layout.main_home);
-
-        //accessing user and the quotes
-        currentUser = User_Singleton.getUser_Instance();
-        currentUser.readQuotesOnStartup(this);
-
-
-        //accessing UI elements
-        TextView welcomeBackTitle = (TextView) findViewById(R.id.mainHomeTitle);
-        quoteOfTheDay = (TextView) findViewById(R.id.quoteOfTheDay);
-        quoteToRememberTitle = (TextView) findViewById(R.id.quoteToRememberTitle);
-        quoteToRememberTitle.animate().alpha(1f).setDuration(1000);
-
-        welcomeBackTitle.append("Welcome back Ninja " + currentUser.getName().toString());
-
-        checkQuotes();
-        //checking if this activity was started after user created account or logged in
-        //Then notification starts, if user comes back here notification remains the same
-
     }
     @Override
     protected void onResume() {
         super.onResume();
-        //checkQuotes();
+        //accessing UI elements
+        welcomeBackTitle = (TextView) findViewById(R.id.mainHomeTitle);
+        quoteOfTheDayView = (TextView) findViewById(R.id.changingQuoteOfTheDay);
+        quoteToRememberTitle = (TextView) findViewById(R.id.quoteToRememberTitle);
+        quoteToRememberTitle.animate().alpha(1f).setDuration(1000);
+
+        //accessing user and reading quotes
+        currentUser = User_Singleton.getUser_Instance();
+        currentUser.readQuotesOnStartup(this);
+
+        //creating notification or getting its instance if already created
+        notificationService = DisplayNotification.getNotificationServiceInstance();
+        //if previous timer exists we assign it to the variable in this activity
+        quoteTimer = DisplayNotification.getQuoteTimer();
+
+
+        welcomeBackTitle.append("Welcome back Ninja " + currentUser.getName().toString());
+        //this method checkes if there are any quotes existing for this user and acts on it
+        checkQuotes();
     }
     @Override
     protected void onPause() {
@@ -113,7 +121,6 @@ public class MainHome_Activity extends AppCompatActivity {
         startActivity(openQuotesList);
     }
 
-
     public void showQuotesSettings(View view) {
         GridLayout changeSettingsForQuotes = (GridLayout) findViewById(R.id.changeSettingsForQuotes);
 
@@ -125,7 +132,7 @@ public class MainHome_Activity extends AppCompatActivity {
     }
 
 
-    boolean newTimeSet = false;
+
     //this method sets the new time for displaying quotes and starts the timer
     public void setNewQuoteTime(View view) {
         EditText setNewQuoteTime = (EditText) findViewById(R.id.setQuoteTime);
@@ -142,13 +149,9 @@ public class MainHome_Activity extends AppCompatActivity {
             quoteTimer.cancel();
         }
 
-        //creating the notification
-
-
         //starting new timer
         quoteTimer = new CountDownTimer(timeToDisplayQuote, 1000) {
         TextView timeLeftForDisplayingQuote = (TextView) findViewById(R.id.timeLeftForDisplayingQuote);
-
 
 
             //actions to happen for every second tick
@@ -157,91 +160,93 @@ public class MainHome_Activity extends AppCompatActivity {
                 if(notificationService.notificationActive == false){
                     this.cancel();
                 }
-                int hours = (int) (millisUntilFinished/10000)/60;
-                int minutes = (int) (millisUntilFinished/1000)/60;
-                int seconds = (int) (millisUntilFinished/1000)%60;
-
-                //setting display of seconds to look nice
-                String secondsString = Integer.toString(seconds);
-                if  (secondsString == "0")
-                {
-                    secondsString = "00";
-                } else if (seconds <= 9)
-                {
-                    secondsString = "0" + seconds;
-                }
 
                 timeLeftForDisplayingQuote.setText(String.format("%02d:%02d:%02d", millisUntilFinished/1000 / 3600,
                         (millisUntilFinished/1000 % 3600) / 60, (millisUntilFinished/1000 % 60)));
 
-                /*timeLeftForDisplayingQuote.setText("Time until next quote " +
-                        Integer.toString(hours) + ":" + Integer.toString(minutes) + ":" + secondsString);*/
-
                 //updating the content of the notification with the remaining time
-
                 notificationService.updateNotification(MainHome_Activity.this, timeLeftForDisplayingQuote.getText().toString(), displayedQuote);
             }
 
             @Override
             public void onFinish() {
             //when the timer finishes we change the quote to display
-                quoteToDisplay++;
-                if (quoteToDisplay >= quotesTotal) {
-                    quoteToDisplay = 0;
+                User_Singleton.quoteToDisplayNumber++;
+                if (User_Singleton.quoteToDisplayNumber >= quotesTotal) {
+                    User_Singleton.quoteToDisplayNumber = 0;
                 }
                 Log.i("Karol","quote is " + displayedQuote);
                 changeQuoteWithSound();
                 notificationService.updateNotification(MainHome_Activity.this, timeLeftForDisplayingQuote.getText().toString(), displayedQuote);
                 Log.i("Karol","quote after is " + displayedQuote);
+                this.cancel();
                 //starting the next timer
                 this.start();
             }
         }.start();
+        DisplayNotification.setQuoteTimer(quoteTimer);
     }
 
 
     //method that will perform the change animation and play the sound
     private   void changeQuoteWithSound(){
+        quoteOfTheDayView = (TextView) findViewById(R.id.changingQuoteOfTheDay);
         soundEffectPlayer = MediaPlayer.create(this, R.raw.computermagic);
         soundEffectPlayer.start();
-        quoteOfTheDay.animate().alpha(0f).setDuration(500);
-        displayedQuote = currentUser.getPersonalQuotes().get(quoteToDisplay);
-            quoteOfTheDay.setText(displayedQuote);
-            quoteOfTheDay.animate().alpha(1f).setDuration(500).setStartDelay(600);
+
+        Log.i("Karol", " Quote of the day VIEW text is " + quoteOfTheDayView.getText().toString());
+        displayedQuote = currentUser.getPersonalQuotes().get(User_Singleton.quoteToDisplayNumber);
+        Log.i("Karol","quote has changed " + displayedQuote + " and User_Singleton.quoteToDisplayNumbe is  " + User_Singleton.quoteToDisplayNumber);
+        quoteOfTheDayView.setText("" + displayedQuote);
+        Log.i("Karol", " Quote of the day VIEW text AFTER   is " + quoteOfTheDayView.getText().toString());
+
 
     }
 
     //in case if this is the new user or fresh run of the application
     //check is performed to see if there are any quotes for the current user
     public void checkQuotes(){
+        //getting current number of quotes
         quotesTotal = currentUser.getPersonalQuotes().size();
+        Log.i("Karol", "Quotes total " + quotesTotal);
+
 
         if (quotesTotal == 0) {
             //if there are no quotes Texview for displaying them will inform user about it
-            quoteOfTheDay.setText("Click Add Quotes to set the quotes to be visible here");
+            quoteOfTheDayView.setText("Click Add Quotes to set the quotes to be visible here");
         } else {
-            displayedQuote =  currentUser.getPersonalQuotes().get(quoteToDisplay);
-            quoteOfTheDay.setText(displayedQuote);
+            //if user already has some quotes we want to display the notification
+            /*if (quoteTimer == null) {
+                displayedQuote =  currentUser.getPersonalQuotes().get(User_Singleton.quoteToDisplayNumber);
+                Log.i("Karol", "Dispolayed quote is " + displayedQuote);
+                quoteOfTheDayView.setText(displayedQuote);
+            }*/
             startingNotification();
-
-
-
         }
     }
 
     private  void startingNotification(){
-        if (first_run || (first_run && quotesTotal > 0)) {
+        //if user comes from welcome screen or changed the time we want to run the notification
+        if ((first_run && quoteTimer == null) || (newTimeSet == true)) {
             //boolean test = isMyServiceRunning(FinancialNinja_TimeService.class);
-            //Toast.makeText(this, "is my service running " + test, Toast.LENGTH_SHORT).show();
-            //Log.i("Karol","is my service running " + test + " and first_run is " + first_run);
 
-            if (notificationService == null || newTimeSet == true)
+            Log.i("Karol","first_run is " + first_run);
+            first_run = false;
+
+            //we want to display new notification only if there is no existing one or the new time was set
+            if (notificationService.notificationActive == false || newTimeSet == true)
             {
                 newTimeSet = false;
+                //starting notification or creating new one
                 notificationService = DisplayNotification.getNotificationServiceInstance();
                 notificationService.showNotification(MainHome_Activity.this, displayedQuote);
+                notificationService.notificationActive = true;
+
                 //setting up the timer for displaying quotes
+                quoteTimer = DisplayNotification.getQuoteTimer();
+                Log.i("Karol","New timer started");
                 startingTimerForQuotes(timeToDisplayQuote);
+                
             }  else {
                 Log.i("Karol","Notification is NOT running");
             }
@@ -257,7 +262,6 @@ public class MainHome_Activity extends AppCompatActivity {
             } else {
                 Log.i("Karol","my service is NOT running");
             }*/
-
         }
     }
 
@@ -266,7 +270,15 @@ public class MainHome_Activity extends AppCompatActivity {
         if (quoteTimer != null) {
             quoteTimer.cancel();
         }
-        currentUser = User_Singleton.resetUser(currentUser);
+           /* notificationService.notificationActive = false;
+            NotificationManager notficationManager = notificationService.getmNotificationManager();
+            notficationManager.cancelAll();*/
+
+        //methods for reseting instances of user and notification
+        notificationService.resetNotification();
+        User_Singleton.resetUser();
+
+
         Intent logOutToHome = new Intent(MainHome_Activity.this, WelcomeActivity.class);
         startActivity(logOutToHome);
     }

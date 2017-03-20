@@ -44,12 +44,12 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
-        currentUser = User_Singleton.resetUser(currentUser);
+
     }
     @Override
     protected void onResume() {
         super.onResume();
-
+        User_Singleton.resetUser();
     }
 
     public void createNewAccount(View view) {

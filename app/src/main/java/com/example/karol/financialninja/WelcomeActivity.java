@@ -31,13 +31,13 @@ import android.view.View;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
-        currentUser = User_Singleton.resetUser(currentUser);
+        //currentUser = User_Singleton.resetUser(currentUser);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        currentUser = User_Singleton.resetUser(currentUser);
+        //currentUser = User_Singleton.resetUser(currentUser);
     }
 
     public void createAccountWelcome(View view) {
