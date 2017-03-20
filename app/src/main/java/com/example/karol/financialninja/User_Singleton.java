@@ -29,7 +29,7 @@ import java.util.ArrayList;
  * to login, create account or home activities its instance is erased. It becomes null.
  * This is the simplest version of logging out.
  *
- * Last Update: 15/03/2017
+ * Last Update: 20/03/2017
  */
 
 

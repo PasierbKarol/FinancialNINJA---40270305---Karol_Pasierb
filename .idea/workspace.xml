@@ -23,15 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72c2e3a9-43f2-4cde-b710-d89074aa1fd6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/CreateAccountActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/CreateAccountActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_home.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_home.xml" />
     </list>
     <ignored path="FinancialNINJA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,53 +60,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DisplayNotification.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java">
+      <file leaf-file-name="LogInActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="394">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
               <folding>
-                <element signature="method#setQuoteTimer#0;class#DisplayNotification#0" expanded="false" />
-                <element signature="method#updateNotification#0;class#DisplayNotification#0" expanded="true" />
-                <element signature="method#resetNotification#0;class#DisplayNotification#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User_Singleton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
-              <folding>
-                <element signature="docComment;class#User_Singleton#0" expanded="false" />
-                <element signature="method#getName#0;class#User_Singleton#0" expanded="false" />
-                <element signature="method#getUserName#0;class#User_Singleton#0" expanded="false" />
-                <element signature="e#5337#5338#0" expanded="true" />
-                <element signature="e#5373#5374#0" expanded="true" />
-                <marker date="1490007722304" expanded="false" signature="1532:2401" ph="..." />
-                <marker date="1490007722304" expanded="true" signature="2771:5005" ph="..." />
-                <marker date="1490007722304" expanded="false" signature="2775:4305" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainHome_Activity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1219">
-              <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
-              <folding>
-                <element signature="method#onCreate#0;class#MainHome_Activity#0" expanded="true" />
-                <element signature="method#onResume#0;class#MainHome_Activity#0" expanded="true" />
-                <element signature="method#startingTimerForQuotes#0;class#MainHome_Activity#0" expanded="true" />
-                <element signature="method#onTick#0;class#5473:7114" expanded="true" />
-                <element signature="method#changeQuoteWithSound#0;class#MainHome_Activity#0" expanded="true" />
-                <element signature="method#checkQuotes#0;class#MainHome_Activity#0" expanded="true" />
-                <marker date="1490008383025" expanded="false" signature="3690:4053" ph="{...}" />
-                <marker date="1490008383025" expanded="false" signature="10364:10957" ph="..." />
+                <element signature="method#onCreate#0;class#LogInActivity#0" expanded="true" />
+                <element signature="method#onResume#0;class#LogInActivity#0" expanded="true" />
+                <element signature="method#logInToAccount#0;class#LogInActivity#0" expanded="true" />
+                <marker date="1490019888366" expanded="true" signature="2285:4130" ph="..." />
               </folding>
             </state>
           </provider>
@@ -2826,13 +2786,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/home_welcome_user.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/home_welcome_new_user.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/add_quote_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/CreateAccountActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main_home.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java" />
       </list>
     </option>
   </component>
@@ -2984,7 +2944,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPropertiesWindowManager.STATE" value="ToolWindow" />
-    <property name="device.picker.selection" value="Nexus_5_API_25_6.0" />
+    <property name="device.picker.selection" value="Baytrail0DEEBA96" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -3284,7 +3244,7 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -3415,11 +3375,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-1039" y="221" width="829" height="547" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="-1345" y="-12" width="1205" height="880" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="-776" y="3" width="340" height="468" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="-1053" y="1" width="281" height="481" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.09221748" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" x="-1164" y="69" width="357" height="530" />
@@ -3427,20 +3390,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39742213" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.7293233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1932" y="92" width="1541" height="867" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="-1058" y="6" width="287" height="428" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="-776" y="3" width="340" height="468" />
-      <window_info id="Palette " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" x="-1053" y="1" width="281" height="481" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3460,24 +3420,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java</url>
-          <line>87</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java</url>
-          <line>82</line>
-          <properties />
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java</url>
-          <line>218</line>
+          <line>88</line>
           <properties />
-          <option name="timeStamp" value="124" />
+          <option name="timeStamp" value="132" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="125" />
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3489,7 +3443,6 @@
         <watch expression="displayedQuote" language="JAVA" />
         <watch expression="quoteTimer" language="JAVA" />
         <watch expression="DisplayNotification.quoteTimer" language="JAVA" />
-        <watch expression="mText" custom="android.support.v7.widget.AppCompatTextView" />
       </configuration>
     </watches-manager>
   </component>
@@ -3578,6 +3531,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="62" column="17" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3592,6 +3546,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="478">
           <caret line="75" column="28" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3740,16 +3695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/Home_WelcomeUser_Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-76">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="method#goToMainHome#0;class#Home_WelcomeUser_Activity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/Home_WelcomeNEWuser_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -3774,27 +3719,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/AddQuote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-976">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-          <folding>
-            <marker date="1489584913906" expanded="true" signature="2164:4536" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-          <folding>
-            <element signature="docComment;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#onCreate#0;class#WelcomeActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LoginRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -3806,17 +3730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_home.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1550">
-          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3832,60 +3745,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/AddQuote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        <state relative-caret-position="697">
+          <caret line="115" column="65" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="65" />
           <folding>
-            <element signature="method#onCreate#0;class#LogInActivity#0" expanded="true" />
-            <element signature="method#logInToAccount#0;class#LogInActivity#0" expanded="true" />
-            <marker date="1489924051519" expanded="true" signature="2348:4193" ph="..." />
+            <element signature="method#submitQuote#0;class#AddQuote#0" expanded="true" />
+            <marker date="1489584913906" expanded="true" signature="2164:4536" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_home.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="215">
+          <caret line="129" column="54" selection-start-line="129" selection-start-column="28" selection-end-line="129" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="method#setQuoteTimer#0;class#DisplayNotification#0" expanded="false" />
-            <element signature="method#updateNotification#0;class#DisplayNotification#0" expanded="true" />
-            <element signature="method#resetNotification#0;class#DisplayNotification#0" expanded="true" />
+            <element signature="class#5658:7275" expanded="false" />
+            <marker date="1490019835759" expanded="false" signature="3849:4212" ph="{...}" />
+            <marker date="1490019835759" expanded="false" signature="10190:10783" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/User_Singleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="164" column="28" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
+        <state relative-caret-position="546">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
-            <element signature="docComment;class#User_Singleton#0" expanded="false" />
             <element signature="method#getName#0;class#User_Singleton#0" expanded="false" />
             <element signature="method#getUserName#0;class#User_Singleton#0" expanded="false" />
+            <element signature="method#getUser_Instance#0;class#User_Singleton#0" expanded="true" />
+            <element signature="method#readQuotesOnStartup#0;class#User_Singleton#0" expanded="true" />
             <element signature="e#5337#5338#0" expanded="true" />
             <element signature="e#5373#5374#0" expanded="true" />
-            <marker date="1490007722304" expanded="false" signature="1532:2401" ph="..." />
-            <marker date="1490007722304" expanded="true" signature="2771:5005" ph="..." />
-            <marker date="1490007722304" expanded="false" signature="2775:4305" ph="..." />
+            <marker date="1490019835734" expanded="false" signature="1532:2401" ph="..." />
+            <marker date="1490019835734" expanded="true" signature="2771:5005" ph="..." />
+            <marker date="1490019835734" expanded="true" signature="2775:4305" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/MainHome_Activity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/DisplayNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
+        <state relative-caret-position="775">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="method#onCreate#0;class#MainHome_Activity#0" expanded="true" />
-            <element signature="method#onResume#0;class#MainHome_Activity#0" expanded="true" />
-            <element signature="method#startingTimerForQuotes#0;class#MainHome_Activity#0" expanded="true" />
-            <element signature="method#onTick#0;class#5473:7114" expanded="true" />
-            <element signature="method#changeQuoteWithSound#0;class#MainHome_Activity#0" expanded="true" />
-            <element signature="method#checkQuotes#0;class#MainHome_Activity#0" expanded="true" />
-            <marker date="1490008383025" expanded="false" signature="3690:4053" ph="{...}" />
-            <marker date="1490008383025" expanded="false" signature="10364:10957" ph="..." />
+            <element signature="method#showNotification#0;class#DisplayNotification#0" expanded="true" />
+            <element signature="method#updateNotification#0;class#DisplayNotification#0" expanded="true" />
+            <element signature="method#resetNotification#0;class#DisplayNotification#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding>
+            <element signature="method#onResume#0;class#WelcomeActivity#0" expanded="true" />
+            <element signature="method#logInWelcome#0;class#WelcomeActivity#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/Home_WelcomeUser_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="method#onCreate#0;class#Home_WelcomeUser_Activity#0" expanded="true" />
+            <element signature="method#goToMainHome#0;class#Home_WelcomeUser_Activity#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/karol/financialninja/LogInActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="method#onCreate#0;class#LogInActivity#0" expanded="true" />
+            <element signature="method#onResume#0;class#LogInActivity#0" expanded="true" />
+            <element signature="method#logInToAccount#0;class#LogInActivity#0" expanded="true" />
+            <marker date="1490019888366" expanded="true" signature="2285:4130" ph="..." />
           </folding>
         </state>
       </provider>

@@ -20,11 +20,11 @@ import android.view.View;
  *
  * Design Patterns Used:
  *
- * Last Update: 15/03/2017
+ * Last Update: 20/03/2017
  */
     public class WelcomeActivity extends AppCompatActivity {
 
-    User_Singleton currentUser;
+
 
 
     @Override
@@ -37,7 +37,7 @@ import android.view.View;
     @Override
     protected void onResume() {
         super.onResume();
-        //currentUser = User_Singleton.resetUser(currentUser);
+
     }
 
     public void createAccountWelcome(View view) {

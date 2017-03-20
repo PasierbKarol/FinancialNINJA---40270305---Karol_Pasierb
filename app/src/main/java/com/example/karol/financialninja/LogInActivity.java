@@ -36,7 +36,7 @@ import org.json.JSONObject;
  *
  * Design Patterns Used:
  *
- * Last Update: 14/03/2017
+ * Last Update: 20/03/2017
  */
 
 
@@ -48,7 +48,6 @@ public class LogInActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        //currentUser = User_Singleton.resetUser(currentUser);
     }
     @Override
     protected void onResume() {

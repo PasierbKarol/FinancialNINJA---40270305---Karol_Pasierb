@@ -15,7 +15,9 @@ public class DisplayNotification {
 
     //used for log out
     public boolean notificationActive = false;
-
+    public boolean secondRun = false;
+    public int timeToDisplayQuote = 20000;
+    public int currentDisplayTime;
 
     //timer to be held by the notification objects as it is used by them
     private static CountDownTimer quoteTimer;
