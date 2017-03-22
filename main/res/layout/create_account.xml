@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    >
+
+
+    <!-- title -->
+    <TextView
+    android:id="@+id/createTitle"
+    android:text="@string/createTitle"
+    style="@style/MyHeadingStyle" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_Create"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutTitle"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp">
+
+    <!-- name -->
+        <TextView
+            android:id="@+id/nameLbl"
+            android:text="@string/nameLbl"
+            android:textSize="16sp"
+            android:textColor="@color/fontColour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp" />
+
+
+        <EditText
+        android:id="@+id/enterNameTxt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+        android:hint="@string/full_nameTXT"
+        android:ems="10"
+            style="@style/EditTextStyle" />
+
+    <!-- login -->
+        <TextView
+        android:id="@+id/userNameLbl"
+        android:text="@string/usernameLbl"
+            style="@style/myTextViewsNINJA" />
+
+        <EditText
+        android:id="@+id/enterUserName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+        android:hint="@string/chooseLoginTxt"
+        android:ems="10"
+        style="@style/EditTextStyle" />
+
+    <!-- email -->
+        <TextView
+        android:id="@+id/emailLbl"
+        android:text="@string/email"
+            style="@style/myTextViewsNINJA" />
+
+        <EditText
+        android:id="@+id/enterEmail"
+        android:layout_width="250dp"
+            android:inputType="textEmailAddress"
+        android:layout_height="wrap_content"
+        android:hint="@string/emailTxt"
+        android:ems="10"
+        style="@style/EditTextStyle"/>
+
+        <!-- password -->
+        <TextView
+            android:id="@+id/passwordLbl"
+            android:text="@string/passwordLbl"
+            style="@style/myTextViewsNINJA" />
+
+        <EditText
+            android:id="@+id/passwordTxt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/choose_passHint"
+            android:ems="10"
+            style="@style/EditTextStyle"/>
+
+        <TextView
+            android:id="@+id/passwordLbl2"
+            android:text="@string/confirm_passwordLbl"
+            style="@style/myTextViewsNINJA" />
+
+        <EditText
+            android:id="@+id/passwordTxt2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/choose_passHint"
+            android:ems="10"
+            style="@style/EditTextStyle"/>
+
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/cancelBtn"
+        android:text="@string/cancelBtn"
+        android:layout_below="@+id/LinearLayout_Create"
+        android:layout_alignStart="@+id/createTitle"
+        android:layout_marginTop="15dp"
+        style="@style/myButtonsNINJA"
+        android:onClick="returnToWelcomeScreen"/>
+
+    <Button
+        android:id="@+id/createBtn"
+        android:text="@string/createBTN"
+        android:layout_alignBaseline="@+id/cancelBtn"
+        android:layout_alignBottom="@+id/cancelBtn"
+        android:layout_alignEnd="@+id/createTitle"
+        style="@style/myButtonsNINJA"
+        android:onClick="createNewAccount"/>
+
+
+</RelativeLayout>
+    </ScrollView>

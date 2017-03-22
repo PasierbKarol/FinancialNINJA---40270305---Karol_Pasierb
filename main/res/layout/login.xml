@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+    <!-- title -->
+    <TextView
+    android:id="@+id/createTitle"
+    android:text="@string/loginTitle"
+        style="@style/MyHeadingStyle"
+    />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_Create"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/aboutTitle"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/logInIMG"
+            android:layout_marginTop="20dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/legoninja"
+            android:contentDescription="@string/ninja" />
+
+
+    <!-- login -->
+        <TextView
+        android:id="@+id/userNameLbl"
+        android:text="@string/usernameLbl"
+        android:textSize="16sp"
+            style="@style/myTextViewsNINJA" />
+
+        <EditText
+        android:id="@+id/enterUserName"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+        android:hint="@string/enter_your_loginTxt"
+        android:ems="10"
+            style="@style/EditTextStyle"
+        />
+
+
+        <!-- password -->
+        <TextView
+            android:id="@+id/passwordLbl"
+            android:text="@string/passwordLbl"
+            android:textSize="16sp"
+            style="@style/myTextViewsNINJA"/>
+
+        <EditText
+            android:id="@+id/passwordLoginTxt"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/enter_your_passwordTxt"
+            android:ems="10"
+            style="@style/EditTextStyle"
+            />
+
+        <!-- recover password -->
+        <LinearLayout
+            android:id="@+id/LLrecoverPassword"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/forgotPasswordTxt"
+            style="@style/myTextViewsNINJA"
+            android:textAlignment="center"
+            android:text="@string/forgot_your_passwordTxt" />
+
+        <TextView
+            android:id="@+id/recoverPassword"
+            android:layout_marginStart="10dp"
+            android:text="@string/recover_passwordLink"
+            style="@style/myTextViewsNINJA"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/LogInBTN"
+        android:text="@string/log_in"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/createTitle"
+        style="@style/myButtonsNINJA"
+        android:onClick="logInToAccount"/>
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:text="@string/cancelBtn"
+
+        style="@style/myButtonsNINJA"
+        android:onClick="returnToWelcomeScreen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/createTitle" />
+
+
+</RelativeLayout>
+    </ScrollView>

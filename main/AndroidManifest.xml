@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.karol.financialninja">
+
+    <!-- Adding permision to allow our app using the Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/determinedninja"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme">
+        <service android:name=".FinancialNinja_TimeService" />
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".Home_WelcomeUser_Activity" />
+        <activity android:name=".Home_WelcomeNEWuser_Activity" />
+        <activity android:name=".MainHome_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QuotesList_Activity" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".AddQuote"/>
+    </application>
+
+</manifest>
