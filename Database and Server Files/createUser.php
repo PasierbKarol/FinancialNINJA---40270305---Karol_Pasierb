@@ -2,7 +2,9 @@
 
 //require("password.php");
 
-    $connection = mysqli_connect("localhost", "40270305", "q4BjVJBP", "40270305");
+    //$connection = mysqli_connect("localhost", "ninjausers-34a36a", "cycki616717","ninjausers-34a36a");
+
+$connection = mysqli_connect("shareddb1a.hosting.stackcp.net", "karol666", "cycki616717","ninjausers-34a36a");
 	
 		if ( !$connection ) {
   die( 'connect error: '.mysqli_connect_error() );
@@ -22,7 +24,7 @@
 		 
 		if( isset($_POST['name']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
 			
-			$query = "INSERT INTO ninjausers (name, username, email, password) VALUES (?, ?, ?, ?)";
+			$query = "INSERT INTO ninjausers (`name`, username, email, `password`) VALUES (?, ?, ?, ?)";
 			$statement = mysqli_prepare($connection, $query);
 			mysqli_stmt_bind_param($statement, "ssss", $name, $username, $email,$password);//$passwordHash);
 			mysqli_stmt_execute($statement);
@@ -34,7 +36,7 @@
 	}
 	
 	 function usernameAvailable() {
-		 global $connection, $username, $user_taken, $user_id;
+		 global $connection, $username, $user_taken, $user_id, $email, $password;
 		 
 		 $statement = mysqli_prepare($connection, "SELECT * FROM ninjausers WHERE username = ?"); 
         mysqli_stmt_bind_param($statement, "s",$username);
@@ -55,7 +57,7 @@
 	 }
 	
 		function findUserID() {
-			 global $connection, $username, $user_taken, $user_id;
+			 global $connection, $username, $user_taken, $user_id, $email, $password;
 			 
 			 echo "I'M INSIDE                   "; 
 			$query = "SELECT * FROM ninjausers WHERE username = ?";

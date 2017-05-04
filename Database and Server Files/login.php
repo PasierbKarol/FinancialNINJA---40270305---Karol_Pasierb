@@ -4,9 +4,12 @@
 
 
     //require("password.php");
-    $connection = mysqli_connect("localhost", "40270305", "q4BjVJBP", "40270305");
-    
-	if ( !$connection ) {
+    $connection = mysqli_connect("shareddb1a.hosting.stackcp.net", "ninjausers-34a36a", "cycki616717","ninjausers-34a36a");
+
+//$connection = mysqli_connect("localhost", "ninjausers-34a36a", "cycki616717","karol666");
+
+
+if ( !$connection ) {
 		die( 'connect error: '.mysqli_connect_error() );
 		}
 		else {
@@ -18,7 +21,7 @@
     
 	//if( isset($_POST['username']) && isset($_POST['password'])) {
 	
-		$query = "SELECT * FROM ninjausers WHERE username = ? AND password = ?";
+		$query = "SELECT * FROM ninjausers WHERE username = ? AND `password` = ?";
 		$statement = mysqli_prepare($connection, $query);
 		if ( !$statement ) {
 			echo "stamement died";

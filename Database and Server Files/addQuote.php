@@ -1,6 +1,6 @@
 <?php
 
-    $connection = mysqli_connect("localhost", "40270305", "q4BjVJBP", "40270305");
+$connection = mysqli_connect("shareddb1a.hosting.stackcp.net", "ninjausers-34a36a", "cycki616717","ninjausers-34a36a");
 
     $quote = $_POST['quote'];
     $author = $_POST['author'];
