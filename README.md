@@ -22,3 +22,5 @@ The display of existing quotes needs an overhaul as at this point it is not very
 Another useful feature would be to skip current quote displayed and move to the next one. At this point all quotes are displayed in order. Good feature would be to allow them to be shuffled. This would give the user better way o look at them as it would vary.
 
 Good feature that could be added to the program would be to export and import list of quotes with the settings. Either to share with friends, or as a replacement for online storage.
+
+This was an exercise made for school purposes only. Therefore there is no intention of improving it. Now it serves as a portfolio.
